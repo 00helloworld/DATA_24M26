@@ -1,0 +1,11 @@
+__pycache__/
+
+# IDEA files
+.idea
+
+# OSX dir files
+.DS_Store
+
+# Modified
+*.docx
+tmp/
