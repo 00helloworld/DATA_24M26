@@ -151,7 +151,7 @@ def imdb_main(downloaded_data='data/raw/title.ratings.tsv', save='data/raw/IMDb_
     # Extract raw data from IMDb
 
     data = pd.read_csv(downloaded_data)
-    data['uids'] = data['tconst\taverageRating\tnumVotes'].str.split('\t').str[0]
+    data['uid'] = data['tconst\taverageRating\tnumVotes'].str.split('\t').str[0]
     data['IMDb_Rating'] = data['tconst\taverageRating\tnumVotes'].str.split('\t').str[1]
     data['IMDb_numVotes'] = data['tconst\taverageRating\tnumVotes'].str.split('\t').str[2]
     data.drop('tconst\taverageRating\tnumVotes', axis=1, inplace=True)
@@ -228,7 +228,7 @@ def rottentomatoes_main(save='data/raw/RT_Ratings.csv'):
 
 if __name__ == '__main__':
     # Get raw data from boxoffice
-    boxoffice_main(save='data/raw/movies_2023_boxoffice.csv')
+    # boxoffice_main(save='data/raw/movies_2023_boxoffice.csv')
 
     # Extract raw data from IMDb
     imdb_main(save='data/raw/IMDb_Ratings.csv')
