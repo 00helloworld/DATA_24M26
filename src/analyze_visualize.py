@@ -7,9 +7,9 @@ def plot_rating_distribution(data_):
     data = data_.copy()
     data['rt_audiencescore'] = data['rt_audiencescore'] / 10
     data['rt_tomatometerscores'] = data['rt_tomatometerscores'] / 10
-    sns.histplot(x='IMDb_Rating', data=data, kde=True, palette='pastel', element ='step', label='IMDb Rating')
-    sns.histplot(x='rt_audiencescore', data=data, kde=True, palette='pastel', element ='step', label='Rotten Tomatoes Audience Score')
-    sns.histplot(x='rt_tomatometerscores', data=data, kde=True, palette='pastel', element ='step', label='Rotten Tomatoes Tomatometer Score')
+    sns.histplot(x='IMDb_Rating', data=data, kde=True, element ='step', label='IMDb Rating')
+    sns.histplot(x='rt_audiencescore', data=data, kde=True, element ='step', label='Rotten Tomatoes Audience Score')
+    sns.histplot(x='rt_tomatometerscores', data=data, kde=True, element ='step', label='Rotten Tomatoes Tomatometer Score')
 
     plt.xlabel('Rating')
     plt.ylabel('Count')
@@ -18,7 +18,7 @@ def plot_rating_distribution(data_):
 
 def plot_gross_distribution(data_):
     data = data_.copy()
-    sns.histplot(x='Gross', data=data, kde=True, palette='pastel', element ='step', label='Gross')
+    sns.histplot(x='Gross', data=data, kde=True, element ='step', label='Gross')
     plt.xlabel('Gross')
     plt.ylabel('Count')
     plt.legend()
@@ -26,7 +26,7 @@ def plot_gross_distribution(data_):
 
 def plot_theaters_distribution(data_):
     data = data_.copy()
-    sns.histplot(x='Theaters', data=data, kde=True, palette='pastel', element ='step', label='Theaters')
+    sns.histplot(x='Theaters', data=data, kde=True, element ='step', label='Theaters')
     plt.xlabel('Theaters')
     plt.ylabel('Count')
     plt.legend()
@@ -35,7 +35,7 @@ def plot_theaters_distribution(data_):
 def plot_avg_gross_distribution(data_):
     data = data_.copy()
     data['avg Gross'] = data['Gross'] / data['Theaters']
-    sns.histplot(x='avg Gross', data=data, kde=True, palette='pastel', element ='step', label='avg Gross')
+    sns.histplot(x='avg Gross', data=data, kde=True, element ='step', label='avg Gross')
     plt.xlabel('avg Gross')
     plt.ylabel('Count')
     plt.legend()
@@ -43,15 +43,25 @@ def plot_avg_gross_distribution(data_):
 
 def plot_opening_gross_distribution(data_):
     data = data_.copy()
-    sns.histplot(x='openingGross', data=data, kde=True, palette='pastel', element ='step', label='Opening Gross')
+    sns.histplot(x='openingGross', data=data, kde=True, element ='step', label='Opening Gross')
     plt.xlabel('Opening Gross')
     plt.ylabel('Count')
     plt.legend()
 
 
+def plot_avg_opening_gross_distribution(data_):
+    data = data_.copy()
+    data['avg openingGross'] = data['openingGross'] / data['openingTheaters']
+    sns.histplot(x='avg openingGross', data=data, kde=True, element ='step', label='avg Opening Gross')
+    plt.xlabel('avg Opening Gross')
+    plt.ylabel('Count')
+    plt.title('avg Opening Gross Distribution')
+    plt.legend()
+
+
 def plot_opening_theaters_distribution(data_):
     data = data_.copy()
-    sns.histplot(x='openingTheaters', data=data, kde=True, palette='pastel', element ='step', label='Opening Theaters')
+    sns.histplot(x='openingTheaters', data=data, kde=True, element ='step', label='Opening Theaters')
     plt.xlabel('Opening Theaters')
     plt.ylabel('Count')
     plt.legend()
