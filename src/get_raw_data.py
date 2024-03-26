@@ -2,7 +2,6 @@ import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
 from bs4 import BeautifulSoup
-import argparse
 import random
 from utils import format_string, user_agent
 
