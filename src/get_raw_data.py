@@ -228,7 +228,7 @@ def rottentomatoes_main(save='data/raw/RT_Ratings.csv'):
 
 if __name__ == '__main__':
     # Get raw data from boxoffice
-    # boxoffice_main(save='data/raw/movies_2023_boxoffice.csv')
+    boxoffice_main(save='data/raw/movies_2023_boxoffice.csv')
 
     # Extract raw data from IMDb
     imdb_main(save='data/raw/IMDb_Ratings.csv')
